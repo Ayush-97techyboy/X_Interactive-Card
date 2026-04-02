@@ -104,7 +104,19 @@ body {
   padding: 3rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
+}
+
+/* grows to fill available height, centers form vertically */
+.form-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+.form-panel .attribution {
+  margin-top: auto;
+  padding-top: 1.5rem;
 }
 
 form {
@@ -213,7 +225,7 @@ input:focus {
 .completed p  { color: var(--gray-400); }
 
 /* ── Attribution ── */
-.attribution { font-size: 0.6875rem; text-align: center; padding: 1rem; }
+.attribution { font-size: 0.6875rem; text-align: center; }
 .attribution a { color: hsl(228,45%,44%); }
 
 /* ── Desktop ── */
@@ -262,5 +274,5 @@ input:focus {
   .card-bottom   { bottom: 1.5rem; left: 2rem; right: 2rem; }
   .cvc-output    { font-size: 0.875rem; }
 
-  .form-panel { flex: 1; padding: 2rem 5rem; }
+  .form-panel { flex: 1; padding: 2rem 5rem; min-height: 100vh; }
 }
