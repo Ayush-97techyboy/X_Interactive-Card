@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Crio.do | Interactive card details form</title>
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- Left: card previews -->
+    <section class="cards-panel" aria-label="Card preview">
+      
+      <!-- Card Front -->
+      <div class="card card-front">
+        <img src="./images/bg-card-front.png" alt="Card front">
+        <img src="./images/card-logo.svg" alt="Card logo" class="card-logo">
+        <p class="number-output">0000 0000 0000 0000</p>
+        <div class="card-bottom">
+          <span class="name-output">Jane Appleseed</span>
+          <span class="card-expiry">
+            <span class="month-output">00</span>/<span class="year-output">00</span>
+          </span>
+        </div>
+      </div>
+      <!-- Card Back -->
+      <div class="card card-back">
+        <img src="./images/bg-card-back.png" alt="Card back">
+        <span class="cvc-output">000</span>
+      </div>
+    </section>
+
+    <!-- Right: form / completed state -->
+    <section class="form-panel">
+
+      <form id="card-form" novalidate>
+
+        <div class="field">
+          <label for="name">Cardholder Name</label>
+          <input type="text" id="name" class="name-input" placeholder="e.g. Jane Appleseed" maxlength="26" autocomplete="off">
+          <span class="error empty"></span>
+          <span class="error invalid"></span>
+        </div>
+
+        <div class="field">
+          <label for="number">Card Number</label>
+          <input type="text" id="number" class="number-input" placeholder="e.g. 1234 5678 9123 0000" maxlength="19" autocomplete="new-password" inputmode="numeric">
+          <span class="error empty"></span>
+          <span class="error invalid"></span>
+        </div>
+
+        <div class="field-row">
+          <div class="field date-container">
+            <label>Exp. Date (MM/YY)</label>
+            <div class="expiry-inputs">
+              <input type="text" id="exp-mm" class="date-input" placeholder="MM" maxlength="2" autocomplete="new-password" inputmode="numeric">
+              <input type="text" id="exp-yy" class="date-input" placeholder="YY" maxlength="2" autocomplete="new-password" inputmode="numeric">
+            </div>
+            <span class="error empty"></span>
+            <span class="error invalid"></span>
+          </div>
+
+          <div class="field">
+            <label for="cvc">CVC</label>
+            <input type="text" id="cvc" class="cvc-input" placeholder="e.g. 123" maxlength="3" autocomplete="new-password" inputmode="numeric">
+            <span class="error empty"></span>
+            <span class="error invalid"></span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Confirm</button>
+      </form>
+
+      <!-- Completed state -->
+      <div class="completed" id="completed">
+        <img src="./images/icon-complete.svg" alt="Complete icon">
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+        <button id="btn-continue" class="btn">Continue</button>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.crio.do" target="_blank">Crio.do</a>.
+    Coded by <a href="https://github.com/Ayush-97techyboy" target="_blank">Ayush Mishra</a>.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
